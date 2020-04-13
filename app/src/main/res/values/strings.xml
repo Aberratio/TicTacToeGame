@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">TicTacToeGame</string>
+    <string name="gra_jednoosobowa">Gra jednoosobowa</string>
+    <string name="gra_dwuosobowa">Gra dwuosobowa</string>
+    <string name="ranking">Ranking</string>
+    <string name="exit">Exit</string>
+    <string name="play">Play</string>
+    <string name="type_your_name">Type your name</string>
+    <string name="name">Name</string>
+    <string name="second_player_name">Second Player Name</string>
+    <string name="first_player_name">First Player Name</string>
 </resources>

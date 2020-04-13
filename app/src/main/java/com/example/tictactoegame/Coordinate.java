@@ -1,25 +1,25 @@
 package com.example.tictactoegame;
 
 public class Coordinate {
-    private int rowNumber;
-    private int columnNumber;
-    private FieldState fieldState;
+    private int m_rowNumber;
+    private int m_columnNumber;
+    private FieldState m_fieldState;
 
     public Coordinate(int rowNumber, int columnNumber, FieldState fieldState) {
-        this.rowNumber = rowNumber;
-        this.columnNumber = columnNumber;
-        this.fieldState = fieldState;
+        m_rowNumber = rowNumber;
+        m_columnNumber = columnNumber;
+        m_fieldState = fieldState;
     }
 
     public int getRowNumber() {
-        return rowNumber;
+        return m_rowNumber;
     }
 
     public int getColumnNumber() {
-        return columnNumber;
+        return m_columnNumber;
     }
 
     public FieldState getFieldState() {
-        return fieldState;
+        return m_fieldState;
     }
 }

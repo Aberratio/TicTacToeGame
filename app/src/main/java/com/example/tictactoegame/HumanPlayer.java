@@ -1,32 +1,32 @@
 package com.example.tictactoegame;
 
 class HumanPlayer implements I_Player {
-    private String playerName;
-    private int playerScore;
-    private FieldState fieldState;
+    private String m_playerName;
+    private int m_playerScore;
+    private FieldState m_fieldState;
 
     public HumanPlayer(String playerName, FieldState fieldState) {
-        this.playerName = playerName;
-        this.fieldState = fieldState;
-        playerScore = 0;
+        m_playerName = playerName;
+        m_fieldState = fieldState;
+        m_playerScore = 0;
     }
 
     @Override
     public String getName() {
-        return playerName;
+        return m_playerName;
     }
 
     @Override
     public Coordinate getMove(Board board) {
-        return new Coordinate(1, 1, fieldState);
+        return new Coordinate(1, 1, m_fieldState);
 
     }
 
     public int getScore() {
-        return playerScore;
+        return m_playerScore;
     }
 
     public void increasePlayerScore() {
-        playerScore++;
+        m_playerScore++;
     }
 }

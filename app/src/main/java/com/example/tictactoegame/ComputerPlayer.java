@@ -5,10 +5,10 @@ import static java.lang.StrictMath.abs;
 
 class ComputerPlayer implements I_Player {
     private static final String COMPUTER_NAME = "AI_PLAYER";
-    private FieldState fieldState;
+    private FieldState m_fieldState;
 
     public ComputerPlayer(FieldState fieldState) {
-        this.fieldState = fieldState;
+        m_fieldState = fieldState;
     }
 
     @Override
@@ -18,7 +18,7 @@ class ComputerPlayer implements I_Player {
 
     @Override
     public Coordinate getMove(Board board) {
-        return getRandomEmptyCoordinateAndChangeItState(board.fieldStateArray, board.BOARD_SIZE);
+        return getRandomEmptyCoordinateAndChangeItState(board.m_fieldStateArray, board.BOARD_SIZE);
     }
 
     private Coordinate getRandomEmptyCoordinateAndChangeItState(FieldState[][] fieldStateArray, int boardSize) {
@@ -28,12 +28,12 @@ class ComputerPlayer implements I_Player {
         for(int rowNumber = randomRowNumber; rowNumber < randomRowNumber + boardSize; rowNumber++) {
             for(int columnNumber = randomColumnNumber; columnNumber < randomColumnNumber + boardSize; columnNumber++) {
                 if(fieldStateArray[abs(rowNumber - boardSize)][abs(columnNumber - boardSize)] == FieldState.EMPTY) {
-                    return new Coordinate(abs(rowNumber - boardSize), abs(columnNumber - boardSize), fieldState);
+                    return new Coordinate(abs(rowNumber - boardSize), abs(columnNumber - boardSize), m_fieldState);
                 }
             }
         }
 
-        return new Coordinate(-1, -1, fieldState);
+        return new Coordinate(-1, -1, m_fieldState);
     }
 
     private int getRandomNumber(int upperbound) {
