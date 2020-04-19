@@ -15,27 +15,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        m_sectionStatePageAdapter = new SectionStatePageAdapter(getSupportFragmentManager(), 0);
+        m_sectionStatePageAdapter = new SectionStatePageAdapter(getSupportFragmentManager(), 5);
 
-        m_viewPager = (ViewPager) findViewById(R.id.container);
+        m_viewPager = findViewById(R.id.container);
 
         setUpViewPager(m_viewPager);
     }
 
-    public void setViewPager(int fragmentNumber) {
-        m_viewPager.setCurrentItem(fragmentNumber);
-    }
-
     private void setUpViewPager(ViewPager viewPager) {
-        SectionStatePageAdapter adapter = new SectionStatePageAdapter(getSupportFragmentManager(), 0);
+        SectionStatePageAdapter adapter = new SectionStatePageAdapter(getSupportFragmentManager(), 5);
         adapter.addFragment(new MenuFragment(), "Menu Fragment");
-        adapter.addFragment(new MenuFragment(), "One Player Fragment");
-        adapter.addFragment(new MenuFragment(), "Two Player Fragment");
-        adapter.addFragment(new MenuFragment(), "Ranking Fragment");
-        adapter.addFragment(new MenuFragment(), "Board Fragment");
+        adapter.addFragment(new OnePlayerFragment(), "One Player Fragment");
+        adapter.addFragment(new TwoPlayerFragment(), "Two Player Fragment");
+        adapter.addFragment(new RankingFragment(), "Ranking Fragment");
+        adapter.addFragment(new BoardFragment(), "Board Fragment");
 
         viewPager.setAdapter(adapter);
     }
 
-
+    public void setViewPager(FragmentCollection fragmentCollection) {
+        m_viewPager.setCurrentItem(fragmentCollection.getValue());
+    }
 }

@@ -10,14 +10,14 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class RankingFragment  extends Fragment {
+public class BoardFragment extends Fragment {
 
     private Button m_backButton;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable final Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.ranking, container, false);
+        View view = inflater.inflate(R.layout.board_layout, container, false);
         m_backButton = view.findViewById(R.id.back_button);
 
         m_backButton.setOnClickListener(new View.OnClickListener() {

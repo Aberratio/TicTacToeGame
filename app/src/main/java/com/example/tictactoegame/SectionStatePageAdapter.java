@@ -13,8 +13,8 @@ public class SectionStatePageAdapter extends FragmentStatePagerAdapter {
     private final List<Fragment> m_fragmentList = new ArrayList<>();
     private final List<String> m_fragmentNameList = new ArrayList<>();
 
-    public SectionStatePageAdapter(@NonNull FragmentManager fm, int behavior) {
-        super(fm, behavior);
+    public SectionStatePageAdapter(FragmentManager fragmentManager, int b) {
+        super(fragmentManager, b);
     }
 
     public void addFragment(Fragment fragment, String fragmentName) {
