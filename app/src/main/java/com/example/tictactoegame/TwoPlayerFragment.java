@@ -20,6 +20,13 @@ public class TwoPlayerFragment  extends Fragment {
         View view = inflater.inflate(R.layout.two_players_game_layout, container, false);
         m_startGameButton = view.findViewById(R.id.start_game_button);
 
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         m_startGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,6 +35,5 @@ public class TwoPlayerFragment  extends Fragment {
                 ((MainActivity)getActivity()).setViewPager(FragmentCollection.BOARD_FRAGMENT);
             }
         });
-        return view;
     }
 }

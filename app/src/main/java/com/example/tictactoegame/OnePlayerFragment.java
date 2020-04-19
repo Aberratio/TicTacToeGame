@@ -20,15 +20,21 @@ public class OnePlayerFragment  extends Fragment {
         View view = inflater.inflate(R.layout.one_player_game_layout, container, false);
         m_startGameButton = view.findViewById(R.id.start_game_button);
 
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         m_startGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            Toast.makeText(getActivity(), "Going to play", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Going to play", Toast.LENGTH_SHORT).show();
 
-            ((MainActivity)getActivity()).setViewPager(FragmentCollection.BOARD_FRAGMENT);
+                ((MainActivity)getActivity()).setViewPager(FragmentCollection.BOARD_FRAGMENT);
             }
         });
-        return view;
     }
 }
 

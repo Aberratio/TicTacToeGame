@@ -26,12 +26,19 @@ public class MenuFragment extends Fragment {
         m_rankingButton = view.findViewById(R.id.ranking_button);
         m_exitButton = view.findViewById(R.id.exit_button);
 
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         m_onePlayerGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "Going to oneplayer game", Toast.LENGTH_SHORT).show();
 
-                ((MainActivity)getActivity()).setViewPager(FragmentCollection.ONE_PLAYER_FRAGMENT);
+               ((MainActivity)getActivity()).setViewPager(FragmentCollection.ONE_PLAYER_FRAGMENT);
             }
         });
 
@@ -40,26 +47,24 @@ public class MenuFragment extends Fragment {
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "Going to twoplayer game", Toast.LENGTH_SHORT).show();
 
-                ((MainActivity)getActivity()).setViewPager(FragmentCollection.TWO_PLAYERS_FRAGMENT);
+               ((MainActivity)getActivity()).setViewPager(FragmentCollection.TWO_PLAYERS_FRAGMENT);
             }
         });
 
         m_rankingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            Toast.makeText(getActivity(), "Going to ranking", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Going to ranking", Toast.LENGTH_SHORT).show();
 
-            ((MainActivity)getActivity()).setViewPager(FragmentCollection.RANKING_FRAGMENT);
+                ((MainActivity)getActivity()).setViewPager(FragmentCollection.RANKING_FRAGMENT);
             }
         });
 
         m_exitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            Toast.makeText(getActivity(), "Exit", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Exit", Toast.LENGTH_SHORT).show();
             }
         });
-
-        return view;
     }
 }

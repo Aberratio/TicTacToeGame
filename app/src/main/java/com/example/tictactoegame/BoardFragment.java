@@ -20,6 +20,13 @@ public class BoardFragment extends Fragment {
         View view = inflater.inflate(R.layout.board_layout, container, false);
         m_backButton = view.findViewById(R.id.back_button);
 
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
         m_backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,6 +35,5 @@ public class BoardFragment extends Fragment {
                 ((MainActivity)getActivity()).setViewPager(FragmentCollection.MENU_FRAGMENT);
             }
         });
-        return view;
     }
 }
