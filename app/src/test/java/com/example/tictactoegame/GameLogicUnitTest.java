@@ -7,16 +7,7 @@ import java.util.InvalidPropertiesFormatException;
 import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
-public class ExampleUnitTest {
-    @Test
-    public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
-    }
+public class GameLogicUnitTest {
 
     @Test
     public void gameWithOnePlayerTest() {
@@ -28,22 +19,22 @@ public class ExampleUnitTest {
         Game game = new Game(userName);
 
         //Assert
-        assertEquals(userName, game.m_circlePlayer.getName());
-        assertEquals(computerName, game.m_crossPlayer.getName());
+        assertEquals(userName, game.m_crossPlayer.getName());
+        assertEquals(computerName, game.m_circlePlayer.getName());
     }
 
     @Test
     public void gameWithTwoPlayersTest() {
         //Arange
         String firstUserName = "firstPlayerName";
-        String secondtUserName = "secondPlayerName";
+        String secondUserName = "secondPlayerName";
 
         //Act
-        Game game = new Game(firstUserName, secondtUserName);
+        Game game = new Game(firstUserName, secondUserName);
 
         //Assert
-        assertEquals(firstUserName, game.m_circlePlayer.getName());
-        assertEquals(secondtUserName, game.m_crossPlayer.getName());
+        assertEquals(firstUserName, game.m_crossPlayer.getName());
+        assertEquals(secondUserName, game.m_circlePlayer.getName());
     }
 
     @Test
