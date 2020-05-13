@@ -22,8 +22,10 @@ public class BoardFragment extends Fragment {
 
     private Button m_backButton;
     private GridView m_gameBoard;
-    static final FieldState[][] m_board = new FieldState[][] {{FieldState.EMPTY, FieldState.EMPTY,FieldState.EMPTY, FieldState.EMPTY },
+    static final FieldState[][] m_fieldState = new FieldState[][] {{FieldState.EMPTY, FieldState.EMPTY,FieldState.EMPTY, FieldState.EMPTY },
             { FieldState.EMPTY, FieldState.EMPTY,FieldState.EMPTY, FieldState.EMPTY }};
+    private Board m_board;
+    private Game m_game;
 
     @Nullable
     @Override
@@ -38,6 +40,9 @@ public class BoardFragment extends Fragment {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        m_board = new Board();
+        m_game = new Game("First Player", "Second Player");
+        m_game.startGame();
 
         m_backButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +53,7 @@ public class BoardFragment extends Fragment {
             }
         });
 
-        m_gameBoard.setAdapter(new BoardAdapter(this.getContext(), m_board));
+        m_gameBoard.setAdapter(new BoardAdapter(this.getContext(), m_fieldState));
 
         m_gameBoard.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -56,5 +61,7 @@ public class BoardFragment extends Fragment {
                 Toast.makeText(getActivity(), "P: " + position, Toast.LENGTH_SHORT).show();
             }
         });
+
+
     }
 }

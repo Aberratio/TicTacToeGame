@@ -1,7 +1,7 @@
 package com.example.tictactoegame;
 
 public class Board {
-    FieldState[][] m_fieldStateArray;
+    public FieldState[][] m_fieldStateArray;
     public int BOARD_SIZE = 10;
 
     public Board() {
